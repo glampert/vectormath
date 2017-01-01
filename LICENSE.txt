@@ -1,25 +1,3 @@
-
-# Vectormath
-
-Modified version of Sony's open sourced header-only vector and matrix math library.
-I've uploaded a copy here so it can be easily submoduled on other projects.
-
-The main differences from the original library released by Sony:
-
-- Removed deprecated SPU/PPU implementations that only targeted PS3/PowerPC.
-- Removed the C interfaces - the C++ interface is much nicer to use with operator overloads, return by val, etc.
-- Massive namespace cleanup. Removed or replaced most macros with functions and constants.
-- Better compliance with strict aliasing rules.
-- Added Portable macros for alignment annotations to remove some `#ifdefs`.
-- Internal SEE helper code moved to a separate header - other files also renamed.
-- Removed the Aos/Soa sub-namespaces, since the Soa implementations where only available for SPU.
-- The library now includes only the generic scalar version and the x86/64 SSE intrinsics version.
-- Added an unpadded `Vector2` and `Point2` to also support basic 2D vector maths. These are always scalar mode (size = 2 floats).
-- All you need to do is include the public header file `vectormath.hpp`. It will expose the relevant parts of the library for you and try to select the SSE implementation if supported.
-
-### Original copyright notice:
-
-<pre>
  Vector Math library for 3-D linear algebra (vector, matrix, quaternion)
    SIMD support for SSE. Also includes generic multi-platform scalar version.
 
@@ -49,5 +27,4 @@ The main differences from the original library released by Sony:
    CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
    ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
    POSSIBILITY OF SUCH DAMAGE.
-</pre>
 
