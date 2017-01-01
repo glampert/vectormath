@@ -10,9 +10,9 @@ The main differences from the original library released by Sony:
 - Removed the C interfaces - the C++ interface is much nicer to use with operator overloads, return by val, etc.
 - Massive namespace cleanup. Removed or replaced most macros with functions and constants.
 - Better compliance with strict aliasing rules.
-- Added Portable macros for alignment annotations to remove some `#ifdefs`.
-- Internal SEE helper code moved to a separate header - other files also renamed.
-- Removed the Aos/Soa sub-namespaces, since the Soa implementations where only available for SPU.
+- Added portable macros for alignment annotations to remove some `#ifdefs`.
+- Internal SSE helper code moved to a separate header - other files also renamed.
+- Removed the Aos/Soa sub-namespaces, since the Soa implementations were only available for SPU.
 - The library now includes only the generic scalar version and the x86/64 SSE intrinsics version.
 - Added an unpadded `Vector2` and `Point2` to also support basic 2D vector maths. These are always scalar mode (size = 2 floats).
 - All you need to do is include the public header file `vectormath.hpp`. It will expose the relevant parts of the library for you and try to select the SSE implementation if supported.
