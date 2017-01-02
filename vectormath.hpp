@@ -14,8 +14,23 @@
     #define VECTORMATH_DEBUG 1
 #endif // DEBUG || _DEBUG
 
+// Detecting the availability of SSE at compile-time is a bit more involving with Visual Studio...
+#ifdef _MSC_VER
+    #if (defined(__AVX__) || defined(__AVX2__) || defined(_M_AMD64) || defined(_M_X64) || (_M_IX86_FP == 1) || (_M_IX86_FP == 2))
+        #define VECTORMATH_CPU_HAS_SSE1_OR_BETTER 1
+    #else // SSE support
+        #define VECTORMATH_CPU_HAS_SSE1_OR_BETTER 0
+    #endif // SSE support
+#else // !_MSC_VER
+    #if defined(__SSE__)
+        #define VECTORMATH_CPU_HAS_SSE1_OR_BETTER 1
+    #else // !__SSE__
+        #define VECTORMATH_CPU_HAS_SSE1_OR_BETTER 0
+    #endif // __SSE__
+#endif // _MSC_VER
+
 // Sony's library includes:
-#if (defined(__SSE__) && !defined(VECTORMATH_FORCE_SCALAR_MODE))
+#if (VECTORMATH_CPU_HAS_SSE1_OR_BETTER && !VECTORMATH_FORCE_SCALAR_MODE)
     #include "sse/vectormath.hpp"
     using namespace Vectormath::SSE;
     #define VECTORMATH_MODE_SCALAR 0
