@@ -1237,7 +1237,7 @@ inline const Matrix4 Matrix4::perspective(float fovyRadians, float aspect, float
     SSEFloat tmp;
     __m128 col0, col1, col2, col3;
 
-    f = std::tanf(VECTORMATH_PI_OVER_2 - fovyRadians * 0.5f);
+    f = tanf(VECTORMATH_PI_OVER_2 - fovyRadians * 0.5f);
     rangeInv = 1.0f / (zNear - zFar);
     const __m128 zero = _mm_setzero_ps();
     tmp.m128 = zero;
