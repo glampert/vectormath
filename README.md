@@ -1,7 +1,7 @@
 
 # Vectormath
 
-Modified version of Sony's open sourced header-only vector and matrix math library.
+Modified version of Sony's open-sourced header-only vector and matrix math library.
 I've uploaded a copy here so it can be easily submoduled on other projects.
 
 The main differences from the original library released by Sony:
@@ -9,7 +9,7 @@ The main differences from the original library released by Sony:
 - Removed deprecated SPU/PPU implementations that only targeted PS3/PowerPC.
 - Removed the C interfaces - the C++ interface is much nicer to use with operator overloads, return by val, etc.
 - Massive namespace cleanup. Removed or replaced most macros with functions and constants.
-- Better compliance with strict aliasing rules.
+- Better compliance with strict-aliasing rules.
 - Added portable macros for alignment annotations to remove some `#ifdefs`.
 - Internal SSE helper code moved to a separate header - other files also renamed.
 - Removed the Aos/Soa sub-namespaces, since the Soa implementations were only available for SPU.
