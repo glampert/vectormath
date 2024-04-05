@@ -463,7 +463,7 @@ inline const Vector2 operator * (float scalar, const Vector2 & vec)
 
 inline const Vector2 absPerElem(const Vector2 & vec)
 {
-    return Vector2(std::fabsf(vec.getX()), std::fabsf(vec.getY()));
+    return Vector2(fabsf(vec.getX()), fabsf(vec.getY()));
 }
 
 inline const Vector2 maxPerElem(const Vector2 & vec0, const Vector2 & vec1)
@@ -506,13 +506,13 @@ inline float lengthSqr(const Vector2 & vec)
 
 inline float length(const Vector2 & vec)
 {
-    return std::sqrtf(lengthSqr(vec));
+    return sqrtf(lengthSqr(vec));
 }
 
 inline const Vector2 normalize(const Vector2 & vec)
 {
     const float lenSqr = lengthSqr(vec);
-    const float lenInv = (1.0f / std::sqrtf(lenSqr));
+    const float lenInv = (1.0f / sqrtf(lenSqr));
     return Vector2((vec.getX() * lenInv), (vec.getY() * lenInv));
 }
 
@@ -628,7 +628,7 @@ inline Point2 & Point2::operator -= (const Vector2 & vec)
 
 inline const Point2 absPerElem(const Point2 & pnt)
 {
-    return Point2(std::fabsf(pnt.getX()), std::fabsf(pnt.getY()));
+    return Point2(fabsf(pnt.getX()), fabsf(pnt.getY()));
 }
 
 inline const Point2 maxPerElem(const Point2 & pnt0, const Point2 & pnt1)
