@@ -427,6 +427,16 @@ inline const Vector3 recipPerElem(const Vector3 & vec)
     return Vector3(_mm_rcp_ps(vec.get128()));
 }
 
+inline const Vector3 sqrtPerElem(const Vector3 & vec)
+{
+	return Vector3(_mm_sqrt_ps(vec.get128()));
+}
+
+inline const Vector3 rsqrtPerElem(const Vector3 & vec)
+{
+	return Vector3(_mm_rsqrt_ps(vec.get128()));
+}
+
 inline const Vector3 absPerElem(const Vector3 & vec)
 {
     return Vector3(sseFabsf(vec.get128()));
@@ -850,6 +860,16 @@ inline const Vector4 recipPerElem(const Vector4 & vec)
     return Vector4(_mm_rcp_ps(vec.get128()));
 }
 
+inline const Vector4 sqrtPerElem(const Vector4 & vec)
+{
+	return Vector4(_mm_sqrt_ps(vec.get128()));
+}
+
+inline const Vector4 rsqrtPerElem(const Vector4 & vec)
+{
+	return Vector4(_mm_rsqrt_ps(vec.get128()));
+}
+
 inline const Vector4 absPerElem(const Vector4 & vec)
 {
     return Vector4(sseFabsf(vec.get128()));
@@ -1165,6 +1185,16 @@ inline const Point3 divPerElem(const Point3 & pnt0, const Point3 & pnt1)
 inline const Point3 recipPerElem(const Point3 & pnt)
 {
     return Point3(_mm_rcp_ps(pnt.get128()));
+}
+
+inline const Point3 sqrtPerElem(const Point3 & pnt)
+{
+	return Point3(_mm_sqrt_ps(pnt.get128()));
+}
+
+inline const Point3 rsqrtPerElem(const Point3 & pnt)
+{
+	return Point3(_mm_rsqrt_ps(pnt.get128()));
 }
 
 inline const Point3 absPerElem(const Point3 & pnt)
